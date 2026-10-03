@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Brand colors */
+  --color-cream: #fff8f0;
+  --color-cream-dark: #f5ede3;
+  --color-dark-text: #2f2a26;
+  --color-brown: #6b4f3b;
+  --color-caramel: #d89b5b;
+  --color-border: #e8dccb;
+  --color-success: #7a9b6b;
+  --color-error: #b85c4a;
+
+  /* Typography */
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+
+  /* Container */
+  --container-max: 1280px;
+}
+
+/*
+  Spacing follows Tailwind's default 4px-based scale, which already matches the
+  Phase 2 8px-base scale 1:1 — no custom spacing tokens needed:
+  4px -> *-1   8px -> *-2   16px -> *-4   24px -> *-6
+  32px -> *-8  48px -> *-12 64px -> *-16  96px -> *-24
+*/
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
